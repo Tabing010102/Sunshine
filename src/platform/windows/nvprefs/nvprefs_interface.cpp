@@ -104,24 +104,26 @@ namespace nvprefs {
   nvprefs_interface::modify_application_profile() {
     if (!pimpl->loaded) return false;
 
-    // Modify and save sunshine.exe application profile settings, if needed
-    bool modified = false;
-    if (!pimpl->driver_settings.check_and_modify_application_profile(modified)) {
-      error_message("Failed to modify application profile settings");
-      return false;
-    }
-    else if (modified) {
-      if (pimpl->driver_settings.save_settings()) {
-        info_message("Modified application profile settings");
-      }
-      else {
-        error_message("Couldn't save application profile settings");
-        return false;
-      }
-    }
-    else {
-      info_message("No need to modify application profile settings");
-    }
+    // // Modify and save sunshine.exe application profile settings, if needed
+    // bool modified = false;
+    // if (!pimpl->driver_settings.check_and_modify_application_profile(modified)) {
+    //   error_message("Failed to modify application profile settings");
+    //   return false;
+    // }
+    // else if (modified) {
+    //   if (pimpl->driver_settings.save_settings()) {
+    //     info_message("Modified application profile settings");
+    //   }
+    //   else {
+    //     error_message("Couldn't save application profile settings");
+    //     return false;
+    //   }
+    // }
+    // else {
+    //   info_message("No need to modify application profile settings");
+    // }
+
+    info_message("Not modifying application profile settings");
 
     return true;
   }
